@@ -282,7 +282,7 @@ public class Student {
 * Unused fields are null
 
 
-<img src="pictures/single_table_db_diagram_1.PNG" width="700" height="400">
+<img src="pictures/single_table_db_diagram_1.PNG" width="1000" height="500">
 
 
 **Example**
@@ -336,7 +336,7 @@ public class Instructor extends User {
 * Discriminator are not required.
 
 
-<img src="pictures/table_per_class_db_diagram_1.PNG" width="700" height="400">
+<img src="pictures/table_per_class_db_diagram_1.PNG" width="1000" height="500">
 
 
 ###### ID generation strategy
@@ -394,7 +394,7 @@ public class Instructor extends User {
 * Hibernate will join the data based on primary key and foreign key
 
 
-<img src="pictures/joined_table_db_diagram_1.PNG" width="700" height="400" >
+<img src="pictures/joined_table_db_diagram_1.PNG" width="1000" height="500" >
 
 
 **Example**
@@ -451,7 +451,7 @@ public class Instructor extends User {
 * In subclasses, use normal Hibernate annotation: `@Entity`. (can also customize with `@Table`, `@Column` etc.)
 
 
-<img src="pictures/mapped_superclass_db_diagram_1.PNG" width="700" height="400" >
+<img src="pictures/mapped_superclass_db_diagram_1.PNG" width="1000" height="500" >
 
 
 **Example**
@@ -494,7 +494,7 @@ public class Instructor extends User {
     * **Joined table**
 
 
-<img src="pictures/comparison_inheritance_strategy.PNG" width="700" height="400" >
+<img src="pictures/comparison_inheritance_strategy.PNG" width="1000" height="500" >
 
 
 ---
