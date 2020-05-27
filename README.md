@@ -15,7 +15,7 @@
 
 
 ##### 1. Mapping Sets
-Example
+**Example**
 
 ```
 	...
@@ -34,7 +34,7 @@ Example
 * If property name is `images`, then column name will be `images_ORDER`.
 * We can override default name as follows `@OrderColumn(name="my_custom_name")`
 
-Example
+**Example**
 
 ```
 	...
@@ -54,7 +54,7 @@ Example
 * If property name is `images`, then column name will be `images_KEY`.
 * We can override default name as follows `@MapKeyColumn(name = "my_custom_name")`
 
-Example
+**Example**
 
 ```
 	...
@@ -77,7 +77,7 @@ Syntax: `@OrderBy("[field name or property name] [ASC |DESC]")`
 
 If ASC or DESC is not specified, then ASC is the default
 
-Example
+**Example**
 
 ```
 ...
@@ -100,7 +100,7 @@ Syntax: `@OrderBy("[field name or property name] [ASC |DESC]")`
 
 If ASC or DESC is not specified, then ASC is the default
 
-Example
+**Example**
 
 `@OrderBy("file_name DESC")`
 
@@ -120,7 +120,7 @@ Example
 
 We can also use `@org.hibernate.annotations.SortComparator` for custom sorting in place of `@OrderBy`
 
-Example
+**Example**
 
 ```
 	...
@@ -152,7 +152,7 @@ Example
 * `@Embedded` : Used to reference an Embedded value type. The use of `@Embedded` is optional
     * `@javax.persistence.Embedded`
 
-Example
+**Example**
 
 ```
 ...
@@ -226,7 +226,7 @@ public class Student {
 `@Enumerated` : Used to reference an Enum type
 * `@javax.persistence.Enumerated`
 
-Example
+**Example**
 
 ```
 ...
@@ -282,10 +282,10 @@ public class Student {
 * Unused fields are null
 
 
+<img src="pictures/single_table_db_diagram_1.PNG" width="700" height="400">
 
 
-
-Example
+**Example**
 
 ```
 ...
@@ -336,20 +336,20 @@ public class Instructor extends User {
 * Discriminator are not required.
 
 
-
+<img src="pictures/table_per_class_db_diagram_1.PNG" width="700" height="400">
 
 
 ###### ID generation strategy
 * When using inheritance strategy `TABLE_PER_CLASS`, it is required to use ID generation strategy `TABLE` i.e. `@GeneratedValue(strategy = GenerationType.TABLE)`.
 * Each table has an ID field
-* Since entities span multiple tables, the next generated ID value can be maintained in a separate table known as a “sequence table”. Hibernate will create a sequence table automatically.
-* This sequence table will hold the “next_val” to use as a base for next id.
+* Since entities span multiple tables, the next generated ID value can be maintained in a separate table known as a Â“sequence tableÂ”. Hibernate will create a sequence table automatically.
+* This sequence table will hold the Â“next_valÂ” to use as a base for next id.
 * Behind the scenes, Hibernate will get the next value from the sequence table and then increment it by 1 (thread-safe)
 * Modifications in Hibernate Config file
     * Increase pool size in since additional connections are needed for accessing sequence table
     * Upgrade to MySQL 8 dialect. Needed for creation of sequence table
 
-Example
+**Example**
 
 ```
 ...
@@ -394,10 +394,10 @@ public class Instructor extends User {
 * Hibernate will join the data based on primary key and foreign key
 
 
+<img src="pictures/joined_table_db_diagram_1.PNG" width="700" height="400" >
 
 
-
-Example
+**Example**
 
 ```
 ...
@@ -442,19 +442,19 @@ public class Instructor extends User {
 * The mapped superclass is no longer a separate table/entity (no `@Entity`)
 * Only the subclasses will use `@Entity`
 * Only the subclasses will have tables in the database
-* Similar to Table per Class strategy but …
+* Similar to Table per Class strategy but Â…
     * No table for superclass
     * No table joins or inheritance exists in the database schema
     * Inheritance only exists in the Java object model
 * In superclass, remove the annotations: `@Entity`, `@Table`, `@Inheritance`
 * In superclass, annotate superclass with `@MappedSuperclass`
-* In subclasses, use normal Hibernate annotation: `@Entity`. (can also customize with `@Table`, `@Column` etc…)
+* In subclasses, use normal Hibernate annotation: `@Entity`. (can also customize with `@Table`, `@Column` etcÂ…)
 
 
+<img src="pictures/mapped_superclass_db_diagram_1.PNG" width="700" height="400" >
 
 
-
-Example
+**Example**
 
 ```
 ...
@@ -494,7 +494,7 @@ public class Instructor extends User {
     * **Joined table**
 
 
-
+<img src="pictures/comparison_inheritance_strategy.PNG" width="700" height="400" >
 
 
 ---
