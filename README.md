@@ -342,8 +342,8 @@ public class Instructor extends User {
 ###### ID generation strategy
 * When using inheritance strategy `TABLE_PER_CLASS`, it is required to use ID generation strategy `TABLE` i.e. `@GeneratedValue(strategy = GenerationType.TABLE)`.
 * Each table has an ID field
-* Since entities span multiple tables, the next generated ID value can be maintained in a separate table known as a sequence table. Hibernate will create a sequence table automatically.
-* This sequence table will hold the next_val to use as a base for next id.
+* Since entities span multiple tables, the next generated ID value can be maintained in a separate table known as a 'sequence table'. Hibernate will create a sequence table automatically.
+* This sequence table will hold the 'next_val' to use as a base for next id.
 * Behind the scenes, Hibernate will get the next value from the sequence table and then increment it by 1 (thread-safe)
 * Modifications in Hibernate Config file
     * Increase pool size in since additional connections are needed for accessing sequence table
@@ -442,13 +442,13 @@ public class Instructor extends User {
 * The mapped superclass is no longer a separate table/entity (no `@Entity`)
 * Only the subclasses will use `@Entity`
 * Only the subclasses will have tables in the database
-* Similar to Table per Class strategy but 
+* Similar to Table per Class strategy but
     * No table for superclass
     * No table joins or inheritance exists in the database schema
     * Inheritance only exists in the Java object model
 * In superclass, remove the annotations: `@Entity`, `@Table`, `@Inheritance`
 * In superclass, annotate superclass with `@MappedSuperclass`
-* In subclasses, use normal Hibernate annotation: `@Entity`. (can also customize with `@Table`, `@Column` etc)
+* In subclasses, use normal Hibernate annotation: `@Entity`. (can also customize with `@Table`, `@Column` etc.)
 
 
 <img src="pictures/mapped_superclass_db_diagram_1.PNG" width="700" height="400" >
